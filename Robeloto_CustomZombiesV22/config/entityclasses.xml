@@ -720,6 +720,7 @@
 	<property name="AvatarController" value="AvatarZombie01Controller"/>
 	<property name="ModelType" value="Standard"/>	
 	<property name="ReplaceMaterial0" value="materials/waterinbucket"/>
+	<property name="ReplaceMaterial2" value="particleeffects/materials/waterfallslope"/>
 	<property name="SizeScale" value="0.9"/>	
 	<property name="WalkType" value="7"/>
 	<property name="Mass" value="40"/>
