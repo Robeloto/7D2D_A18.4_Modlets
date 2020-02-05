@@ -1,0 +1,4 @@
+<configs>
+<append xpath="/progression/perks/perk[@name='perkYeahScience']/effect_group/passive_effect[@level='3,5']/@tags">,AmoxilIngredientParts1,AmoxilIngredientParts2</append>
+<append xpath="/progression/perks/perk[@name='perkYeahScience']/effect_group/passive_effect[@level='5']/@tags">,drugAntibioticsAmoxil</append>
+</configs>

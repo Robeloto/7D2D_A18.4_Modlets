@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="RobelotoPickUpTraps_Mines" />
+		<Description value="Pick up trapspikes and all type of mines." />
+		<Author value="Robeloto" />
+		<Version value="18.3" />
+		<Website value="" />
+	</ModInfo>
+</xml>
