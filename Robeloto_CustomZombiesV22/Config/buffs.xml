@@ -1,0 +1,235 @@
+<configs>
+	
+<append xpath="/buffs">  
+	
+	<buff name="buffDark" name_key="Blind" description_key="" tooltip_key="" icon="ui_game_symbol_stunned" icon_color="255,255,255">
+		<damage_type value="disease"/>
+		<stack_type value="replace"/><duration value="9"/>
+		<effect_group>		
+			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="shadowbuff" play_in_head="true"/>
+			<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" sound="shadowbuff" play_in_head="true"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="shadowbuff" play_in_head="true"/>
+		</effect_group>			
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" effect_name="FadeToBlack"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="FadeToBlack"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="buffAnesthesia" name_key="Drugged" description_key="" tooltip_key="" icon="ui_game_symbol_stunned" icon_color="205,21,21">
+		<damage_type value="disease"/>
+		<stack_type value="replace"/><duration value="7"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" effect_name="Distortion"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Distortion"/>
+			
+			<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7,.2" duration="0,5"/>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.7,.2" duration="0,5"/>
+			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.7,.2" duration="0,5"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.7,.3" duration="0,5"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.10,0" duration="0,5">
+			</passive_effect>
+		</effect_group>
+	</buff>
+	
+		<buff name="buffSanguis" name_key="StaminaLoss_BadSight" description_key="" tooltip_key="" icon="ui_game_symbol_stunned" icon_color="75,188,0">
+		<damage_type value="disease"/>
+		<stack_type value="replace"/><duration value="9"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="player#RunLoop" play_in_head="true"/>	
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" effect_name="Infected"/>			
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Infected"/>
+			<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="150"/>			
+		</effect_group>
+	</buff>
+	
+		<buff name="buffDrowning04" name_key="buffDrowning03Name" description_key="buffDrowning03Desc" tooltip_key="buffDrowning03Desc" icon="ui_game_symbol_oxygen" icon_color="255,0,0" icon_blink="true">
+		<damage_type value="Suffocation"/>
+		<duration value="8"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDrowning03">
+				<requirement name="CVarCompare" cvar="_underwater" operation="NotEquals" value="1"/>
+			</triggered_effect>
+			<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,8" value="1,1"/>
+			<passive_effect name="HealthChangeOT" operation="base_subtract" duration="8,30" value="1,15"/>
+			<passive_effect name="HealthChangeOT" operation="base_subtract" duration="30,250" value="20,500"/>
+			<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9,.2" duration="0,6"/>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9,.2" duration="0,6"/>
+			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.9,.2" duration="0,6"/>			
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="2" effect_name="Drunk"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Drunk"/>
+			</effect_group>	
+	 </buff>
+
+	<buff name="buffLegBroken" name_key="buffLegBrokenName" description_key="buffLegBrokenDesc" tooltip_key="buffLegBrokenTooltip" icon="ui_game_symbol_brokenbone" icon_color="255,0,0">
+		<!-- Note: sprinting with a broken leg could randomly rangdoll the player -->
+		<damage_type value="break"/>
+		<stack_type value="replace"/>
+		<duration value="0"/>
+		<display_value value=".LegHurtDuration"/>
+		<display_value_format value="time"/>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegSplinted"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegCast"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegSprained"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtCounter" operation="set" value="3605"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".LegHurtCounter" operation="set" value="3605"/>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtCounter" operation="add" value="-1"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtDuration" operation="set" value="@.LegHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtDuration" operation="set" value="@.LegHurtCounter"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="CVarCompare" cvar=".LegHurtCounter" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtCounter" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtDuration" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffLegBroken"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="AttributeLevel" operation="base_subtract" value="1" tags="attFortitude,attAgility"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+
+			<passive_effect name="RunSpeed" operation="perc_subtract" value="0.6"/>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.6"/>
+			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.6"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.7"/>
+		</effect_group>
+	</buff>	
+
+	<buff name="buffLegSplinted" name_key="buffLegSplintedName" description_key="buffLegSplintedDesc" tooltip_key="buffLegSplintedTooltip" icon="ui_game_symbol_splint">
+		<damage_type value="sprain"/>
+		<duration value="0"/>
+		<display_value value=".LegHurtDuration"/>
+		<display_value_format value="time"/>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegBroken"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtCounter" operation="add" value="-2"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtDuration" operation="set" value="@.LegHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtDuration" operation="divide" value="2"/>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtDuration" operation="set" value="@.LegHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtDuration" operation="divide" value="2"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="CVarCompare" cvar=".LegHurtCounter" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtCounter" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtDuration" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffLegSplinted"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="RunSpeed" operation="perc_subtract" value="0.35"/>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.35"/>
+			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.35"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.40"/>
+		</effect_group>
+	</buff>
+	
+		<buff name="buffArmSplinted" name_key="buffArmSplintedName" description_key="buffArmSplintedDesc" icon="ui_game_symbol_medical">
+		<stack_type value="replace"/>
+		<duration value="1800"/>
+		<effect_group>
+			<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.4,0" duration="0,1800"/>
+			<passive_effect name="RoundsPerMinute" operation="perc_subtract" value="0.4,0" duration="0,1800"/>
+			<passive_effect name="StaminaLoss" operation="perc_add" value="0.4,0" duration="0,1800" tags="melee,ranged"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffArmBroken"/>
+		</effect_group>
+	</buff>
+
+	<buff name="buffIllPneumonia01" name_key="Pneumonia" description_key="buffIllPneumonia01Desc" tooltip_key="buffIllPneumonia01Tooltip" icon="ui_game_symbol_infection" icon_color="72,0,254" icon_blink="true">
+		<damage_type value="Disease"/>
+		<stack_type value="ignore"/>
+		<duration value="250"/>	
+		<effect_group>			
+			<passive_effect name="AttributeLevel" operation="base_subtract" value="2" tags="attFortitude,attStrength"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>		
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+			
+			<passive_effect name="StaminaChangeOT" operation="base_subtract" value="3"/>
+			
+			<passive_effect name="HealthMaxModifierOT" operation="base_subtract" value=".6"/>
+			<passive_effect name="HealthChangeOT" operation="base_subtract" value=".5"/>
+			<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value=".1"/>
+
+			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="buffIllPneumonia01">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$illnessChance"/>
+			</triggered_effect>
+	</effect_group>
+	</buff>
+
+	<buff name="buffInjuryStunnedX" name_key="buffInjuryStunned01Name" description_key="buffInjuryStunned01Desc" icon="ui_game_symbol_stunned" icon_color="255,128,0">
+		<damage_type value="stun"/>
+		<stack_type value="replace"/>
+		<duration value="4"/>
+		<display_value value=".stunDisplay"/><display_value_key value="{0}"/>
+
+		<effect_group>
+			<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8,.2" duration="0,4"/>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8,.2" duration="0,4"/>
+			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.8,.2" duration="0,4"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.8,.2" duration="0,4"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.5,0" duration="0,4">
+			</passive_effect>
+
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.5" fade="1" effect_name="Blur"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_stunned" play_in_head="true"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="PlaySound" sound="buff_stunned" play_in_head="true"/>
+
+			<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="buff_stunned" play_in_head="true"/>
+			<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="buff_stunned" play_in_head="true"/>
+
+			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="buffInjuryStunned01Cooldown">
+				<requirement name="CVarCompare" cvar=".shotgunSuppressCooldown" operation="LT" value="1"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar=".shotgunSuppressCooldown" operation="set" value="0"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="4"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stunDisplay" operation="add" value="-1"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+
+	<buff name="buffShocked2" description_key="buffShockedDesc" tooltip_key="buffShockedTooltip" icon="ui_game_symbol_electric_power" name_key="buffShockedName" icon_color="255,0,0">
+		<damage_type value="electrical"/>
+		<stack_type value="replace"/>
+		<duration value="4.5"/>
+		<effect_group>
+			<passive_effect name="HealthChangeOT" operation="base_add" value="-6"/>
+			<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9,0" duration="0,3.2"/>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9,0" duration="0,3.2"/>
+			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.9,0" duration="0,3.2"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.9,0" duration="0,3.2"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0.75,0"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0.75,0"/>
+
+			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+
+			<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="ETrapHit" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="shockerbuff"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="shockerbuff"/>
+			<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="shockerbuff"/>
+		</effect_group>
+	</buff>	
+</append>
+</configs>
