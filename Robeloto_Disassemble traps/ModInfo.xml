@@ -2,7 +2,7 @@
 <xml>
 	<ModInfo>
 		<Name value="Robeloto disassemble traps" />
-		<Description value="Disassemble traps" />
+		<Description value="Disassemble spike traps with wrench" />
 		<Author value="Robeloto" />
 		<Version value="18.3" />
 		<Website value="" />
