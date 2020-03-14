@@ -61,7 +61,6 @@
 <set xpath="/lootcontainers/lootgroup[@name='groupSafeLoot']/item[@group='groupAmmoRegular']/@prob">.15</set><!-- original:.2 -->
 <set xpath="/lootcontainers/lootgroup[@name='groupSafeLoot']/item[@group='groupWeaponsScaled']/@prob">.6</set><!-- original:.7 -->
 <set xpath="/lootcontainers/lootgroup[@name='groupSafeLoot']/item[@group='groupModAllScaled']/@prob">.1</set><!-- original:.15 -->
-<set xpath="/lootcontainers/lootgroup[@name='groupSafeLoot']/item[@group='oldCash']/@count">20,200</set><!-- original:10,300 -->
 <!-- nerf nailgun loot chance -->
 <set xpath="/lootcontainers/lootcontainer[@id='88']/item[@name='gunToolNailgun']/@prob">0.2</set> <!-- original:0.6 -->
 <set xpath="/lootcontainers/lootgroup[@name='tools']/item[@name='gunToolNailgun']/@loot_prob_template">0.2</set>

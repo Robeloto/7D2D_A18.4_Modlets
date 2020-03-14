@@ -16,7 +16,7 @@
 <set xpath="/blocks/block[@name='chemistryStation']/property[@name='HeatMapTime']/@value">6000</set> <!-- original: 5000 -->
 <set xpath="/blocks/block[@name='chemistryStation']/property[@name='HeatMapFrequency']/@value">1500</set> <!-- original: 1000 -->
 <!-- Harder to get honey from tree stumps -->
-<set xpath="/blocks/block[@name='treeStump']/drop[@prob='.4']/@prob">.3</set>
+<set xpath="/blocks/block[@name='treeStump']/drop[@event='Destroy']/@prob">.3</set> <!-- original .4 -->
 <!-- Harvesting resources nerf -->
 <set xpath="/blocks/block/drop[@event='Harvest' and @name='resourceBrokenGlass']/@count">1,4</set>
 <set xpath="/blocks/block/drop[@event='Harvest' and @name='resourceCloth']/@count">1,2</set>
