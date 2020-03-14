@@ -20,6 +20,7 @@
 <set xpath="/lootcontainers/lootcontainer[@id='70']/item[@group='groupTreasureMaps']/@prob">0.02</set>
 <set xpath="/lootcontainers/lootcontainer[@id='71']/item[@group='groupTreasureMaps']/@prob">0.02</set>
 <set xpath="/lootcontainers/lootcontainer[@id='73']/item[@group='groupTreasureMaps']/@prob">0.02</set>
+
  <!-- Finding workstations and tools schematic is hard now -->
 <set xpath="/lootcontainers/lootgroup[@name='rareBooks']/item[@group='schematicsToolsRare']/@prob">0.05</set>
 <set xpath="/lootcontainers/lootcontainer[@id='91']/item[@name='forgeSchematic']/@prob">.01</set>
@@ -46,6 +47,21 @@
 <!-- Move tools to higher loot grade reward -->
 <set xpath="/lootcontainers/lootgroup[@name='groupQuestTools']/item[@name='meleeToolPickaxeIron']/@loot_prob_template">GradeBLoot</set>
 <set xpath="/lootcontainers/lootgroup[@name='groupQuestTools']/item[@name='meleeToolSledgehammerSteel']/@loot_prob_template">GradeCLootLow</set>
+<!-- reduced loot just a bit -->
+<set xpath="/lootcontainers/lootgroup[@name='groupBuriedWeaponChest']/@count">1,3</set> <!-- original:1,4 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupBuriedWeaponChest']/item[@group='schematicsModsCommon']/@prob">.7</set><!-- original:.8 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupBuriedWeaponChest']/item[@group='schematicsModsRare']/@prob">.15</set><!-- original:.2 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupBuriedWeaponChest']/item[@group='groupModAllScaled']/@prob">.75</set><!-- original:1 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupBuriedWeaponChest']/item[@group='groupWeaponsScaled']/@prob">.1</set><!-- original:2 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupBuriedWeaponChest']/item[@group='groupArmorScaled']/@prob">.75</set><!-- original:1 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupHeroChestLoot']/item[@group='groupAmmoRegular']/@prob">.08</set><!-- original:.1 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupHeroChestLoot']/item[@group='groupWeaponsScaledTPlus']/@prob">0.3</set><!-- original:0.4 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupHeroChestLoot']/item[@group='groupArmorScaledTPlus']/@prob">.3</set><!-- original:0.4 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupHeroChestLoot']/item[@group='groupModAllScaled']/@prob">.15</set><!-- original:.2 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupSafeLoot']/item[@group='groupAmmoRegular']/@prob">.15</set><!-- original:.2 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupSafeLoot']/item[@group='groupWeaponsScaled']/@prob">.6</set><!-- original:.7 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupSafeLoot']/item[@group='groupModAllScaled']/@prob">.1</set><!-- original:.15 -->
+<set xpath="/lootcontainers/lootgroup[@name='groupSafeLoot']/item[@group='oldCash']/@count">20,200</set><!-- original:10,300 -->
 <!-- nerf nailgun loot chance -->
 <set xpath="/lootcontainers/lootcontainer[@id='88']/item[@name='gunToolNailgun']/@prob">0.2</set> <!-- original:0.6 -->
 <set xpath="/lootcontainers/lootgroup[@name='tools']/item[@name='gunToolNailgun']/@loot_prob_template">0.2</set>

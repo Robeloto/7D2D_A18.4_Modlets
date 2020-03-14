@@ -4,6 +4,10 @@
 <set xpath="/recipes/recipe[@name='resourceGunPowder']/ingredient[@name='resourcePotassiumNitratePowder']/@count">4</set> <!-- original:2 -->
 <set xpath="/recipes/recipe[@name='ammoJunkTurret']/ingredient[@name='resourceScrapIron']/@count">5</set>                 <!-- original:3 -->
 
+<!-- they are easy to find out there in the world, so do not be lazy -->
+<remove xpath="/recipes/recipe[@name='toolCookingPot']"/>
+<remove xpath="/recipes/recipe[@name='toolCookingGrill']"/>
+
 <append xpath="/recipes">
 
 <!-- Gunpowder should need more resources, as it is way too easy to get resources -->
