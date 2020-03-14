@@ -1,6 +1,7 @@
 <configs>
 <!-- Stone tools do less damage on metal objects, except Sledge hammer -->
 <set xpath="/items/item[contains(@name, 'Stone')]/effect_group/passive_effect[@value='-.5' or @value='-.8']/@value">-1</set>
+<set xpath="/items/item[contains(@name, 'Stone')]/effect_group/passive_effect[@value='-.33']/@value">-.62</set>
 <!-- All tools and weapons can break -->
 <set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
 <!-- Nerfing ammo damage -->
