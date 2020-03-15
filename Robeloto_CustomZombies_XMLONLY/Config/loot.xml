@@ -1,15 +1,15 @@
 <configs>
 
 <append xpath="/lootcontainers/lootgroup[@name='commonBooks']">
-<item name="qz_killthemummy" count="1"/>
-<item name="qz_killsomeghosts" count="1"/>
+<item name="KillTheMummy" count="1"/>
+<item name="KillSomeGhosts" count="1"/>
  </append>
 
 <append xpath="/lootcontainers/lootgroup">
 
 <lootgroup name="groupQuestChallenge">
-<item name="qz_killthemummy"/>
-<item name="qz_killsomeghosts"/>
+<item name="KillTheMummy"/>
+<item name="KillSomeGhosts"/>
 </lootgroup>
 
 <lootgroup name="schematicsModsRare">
@@ -17,12 +17,12 @@
 </lootgroup>
 
 <lootgroup name="rareMedicine">
-<item name="drugAntibioticsAmoxil" count="1,2" prob="0.03"/>
+<item name="drugAntibioticsAmoxil" count="1,2" prob="0.06"/>
 </lootgroup>
 
 
 <lootgroup name="airdropMedicine">
-<item name="drugAntibioticsAmoxil" count="1,2" prob="0.06"/>
+<item name="drugAntibioticsAmoxil" count="1,2" prob="0.07"/>
 </lootgroup>
 
 <lootgroup name="labEquipment">
@@ -37,8 +37,8 @@
 <append xpath="/lootcontainers">
 
 <lootgroup name="RobelotoQuests">
-	<item name="qz_killthemummy" count="1" prob="0.5"/>
-	<item name="qz_killsomeghosts" count="1" prob="0.5"/>
+	<item name="KillTheMummy" count="1" prob="0.5"/>
+	<item name="KillSomeGhosts" count="1" prob="0.5"/>
 </lootgroup>
 </append>
 

@@ -2,14 +2,14 @@
 <configs>
 <append xpath="/quests">
 
-<quest id="challenge_KillTheMummy">
+<quest id="rchallenge_KillTheMummy">
 		<property name="name_key" value="Kill The Mummy!"/>
 		<property name="subtitle_key" value="Kill The Mummy"/>
-		<property name="description_key" value="challenge_KillTheMummy_description"/>
+		<property name="description_key" value="rchallenge_KillTheMummy_description"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
 		<property name="category_key" value="challenge"/>
-		<property name="offer_key" value="challenge_KillTheMummy_offer"/>
+		<property name="offer_key" value="rchallenge_KillTheMummy_offer"/>
 		<property name="completion_key" value="challenge_KillTheMummy_completion" />		
 		<property name="difficulty" value="insane"/>
 		<property name="completiontype" value="TurnIn"/>
@@ -23,7 +23,7 @@
 			<property name="phase" value="2"/>
 		</objective>
 
-		<action type="SpawnEnemy" id="zombieMummy" value="1" phase="3"/>
+		<action type="SpawnEnemy" id="zombieMummy" value="2" phase="3"/>
 		<objective type="ZombieKill" id="zombieMummy" value="1" phase="3"/>
 
 		<objective type="InteractWithNPC">
@@ -31,20 +31,19 @@
 		</objective>
 
 		<reward type="Exp" value="5000"/>
-		<!-- You can define a range of rewards like <reward type="Item" id="casinoCoin" value="200-500"/> -->
 		<reward type="Item" id="casinoCoin" value="2500"/>
 	    <reward type="Item" id="medicalPlasterCast" value="2"/>		
 	</quest>
 
-<quest id="challenge_KillSomeGhosts">
+<quest id="rchallenge_KillSomeGhosts">
 		<property name="name_key" value="Kill Some Ghosts!"/>
 		<property name="subtitle_key" value="Kill Some Ghosts!"/>
-		<property name="description_key" value="challenge_KillSomeGhosts_description"/>
+		<property name="description_key" value="rchallenge_KillSomeGhosts_description"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
 		<property name="category_key" value="challenge"/>
-		<property name="offer_key" value="challenge_KillSomeGhosts_offer"/>
-		<property name="completion_key" value="challenge_KillSomeGhosts_completion" />		
+		<property name="offer_key" value="rchallenge_KillSomeGhosts_offer"/>
+		<property name="completion_key" value="rchallenge_KillSomeGhosts_completion" />		
 		<property name="difficulty" value="insane"/>
 		<property name="completiontype" value="TurnIn"/>
 
@@ -57,16 +56,20 @@
 			<property name="phase" value="2"/>
 		</objective>
 
-		<action type="SpawnEnemy" id="zombieSpectre" value="5" phase="3"/>
-		<objective type="ZombieKill" id="zombieSpectre" value="3" phase="3"/>
+		<action type="SpawnEnemy" id="zombieSpectre" value="2" phase="3"/>
+		
+		<objective type="ZombieKill" id="zombieSpectre" value="1" phase="3"/>
+		
+		<action type="SpawnEnemy" id="zombieSpectreGirl" value="2" phase="4"/>
+		
+		<objective type="ZombieKill" id="zombieSpectreGirl" value="1" phase="4"/>
 
 		<objective type="InteractWithNPC">
-			<property name="phase" value="4"/>
+			<property name="phase" value="5"/>
 		</objective>
 
-		<reward type="Exp" value="6000"/>
-		<!-- You can define a range of rewards like <reward type="Item" id="casinoCoin" value="200-500"/> -->
-		<reward type="Item" id="casinoCoin" value="2600"/>
+		<reward type="Exp" value="5000"/>
+		<reward type="Item" id="casinoCoin" value="2500"/>
 	    <reward type="Item" id="medicalFirstAidKit" value="1"/>		
 	</quest>
 </append>
