@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xml>
 	<ModInfo>
-		<Name value="RobelotoCustomZombies V2.5" />
-		<Description value="An XML only custom zombies mod." />
+		<Name value="Robeloto_CustomZombies_XMLONLY" />
+		<Description value="An custom zombies mod." />
 		<Author value="Robeloto" />
-		<Version value="18.3" />
+		<Version value="18.4" />
 		<Website value="" />
 	</ModInfo>
 </xml>
