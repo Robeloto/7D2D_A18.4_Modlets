@@ -708,6 +708,58 @@
 	<property name="AttackTimeoutDay" value="1.5"/>
 	<property name="AttackTimeoutNight" value="1.1"/>
 
+	<property name="ExperienceGain" value="5900"/>
+	<property name="DeadBodyHitPoints" value="350"/>
+	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+	<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="80"/> <!-- animalSnake -->
+	<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="40"/>
+
+	<effect_group name="Base Effects">
+		<passive_effect name="HealthMax" operation="base_set" value="700"/>
+		<passive_effect name="HealthMax" operation="perc_add" value="0"/> <!-- Animal HP scale -->
+	</effect_group>
+</entity_class>
+
+<entity_class name="animalFireSnake" extends="animalSnake">
+	<property name="Tags" value="entity,animal,hostile"/>
+	<property name="EntityType" value="Animal"/>
+	<property name="ReplaceMaterial0" value="itemmodeffects/materials/melee_fire"/>	
+	<property name="Class" value="EntityAnimalSnake"/>
+	<property name="Parent" value="Enemies"/>
+	<property name="PhysicsBody" value="snake"/>
+	<property name="SizeScale" value="3"/>	
+	<property name="Mass" value="800"/>
+	<property name="Weight" value="500"/>
+	<property name="SoundHurt" value="anacondapain"/>
+	<property name="SoundDeath" value=""/>
+	<property name="SoundRandom" value="anacondaroam"/>
+	<property name="SoundSense" value="anacondasense"/>
+	<property name="SoundAlert" value="anacondaalert"/>
+	<property name="SoundAttack" value="anacondaattack"/>
+	<property name="RootMotion" value="true"/>
+	<property name="HasDeathAnim" value="true"/>
+
+	<property class="MechanimAttackTriggers">
+		<property name="state0" value="AttackTrigger"/>
+	</property>
+	<property class="MechanimAttackStates">
+		<property name="state0" value="attack"/>
+	</property>
+	<property class="MechanimDeathTriggers">
+		<property name="state0" value="DeathTrigger"/>
+	</property>
+
+	<!-- Gameplay -->
+	<property name="MaxTurnSpeed" value="100"/>
+	<property name="MoveSpeed" value="0.25"/>
+	<property name="MoveSpeedAggro" value=".3, .55"/>
+	<property name="MoveSpeedPanic" value="0.6"/>
+	<property name="SightRange" value="150"/>		
+
+	<property name="HandItem" value="meleeHandAnimalFireSnake"/>
+	<property name="AttackTimeoutDay" value="1.5"/>
+	<property name="AttackTimeoutNight" value="1.1"/>
+
 	<property name="ExperienceGain" value="3200"/>
 	<property name="DeadBodyHitPoints" value="350"/>
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
@@ -720,8 +772,8 @@
 	</effect_group>
 </entity_class>
 
-<entity_class name="animalRadiatedCreature" extends="animalTemplateHostile">
-	<property name="ReplaceMaterial0" value="materials/electricshock"/>	
+<entity_class name="animalRadiatedRabbit" extends="animalTemplateHostile">
+	<property name="ReplaceMaterial0" value="materials/imageeffect_turretview"/>
 	<property name="PhysicsBody" value="rabbit"/>	
 	<property name="Class" value="EntityEnemyAnimal"/>
 	<property name="SizeScale" value="2"/>		

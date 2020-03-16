@@ -290,7 +290,7 @@
 </item>
 <!---->
 
-<!-- MELEE HANDS ANIMALS -->	
+<!-- MELEE HANDS ANIMALS -->
 <item name="meleeHandAnimalAnaconda">
 	<property name="Extends" value="meleeHandMaster"/>
 	<property name="CreativeMode" value="None"/>
@@ -310,6 +310,28 @@
 		<passive_effect name="BuffProcChance" operation="base_set" value="0.2" tags="buffInjuryBleeding"/>		
 		<passive_effect name="BuffProcChance" operation="base_set" value="0.8" tags="buffInfectionCatch"/>		
 		<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="70"/>
+	</effect_group>
+</item>
+	
+<item name="meleeHandAnimalFireSnake">
+	<property name="Extends" value="meleeHandMaster"/>
+	<property name="CreativeMode" value="None"/>
+	<property name="HoldType" value="55"/>
+	<property class="Action0">
+		<property name="Delay" value="1.0"/>
+		<property name="Range" value="4"/>
+		<property name="Sphere" value="2"/>
+		<property name="Block_range" value="5"/>		
+		<property name="DamageEntity" value="20"/>
+		<property name="DamageBlock" value="400"/>
+		<property name="Buff" value="buffInjuryBleeding,buffBurningMolotov"/>
+		<property name="Buff_chance" value="0.2,0.8"/>
+	</property>
+	<effect_group name="meleeHandAnimalFireSnake" tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<passive_effect name="BuffProcChance" operation="base_set" value="0.1" tags="buffInjuryBleeding"/>		
+		<passive_effect name="BuffProcChance" operation="base_set" value="0.8" tags="buffBurningMolotov"/>	
+		<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="60"/><!--InfectionRadiated-->
 	</effect_group>
 </item>
 

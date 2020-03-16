@@ -4,7 +4,7 @@
 <entity name="animalChickenDemon" prob="0.1" />
 <entity name="animalCloaker" prob="0.1" />
 <entity name="animalDiamondPhoenix" prob="0.04" />
-<entity name="animalRadiatedCreature" prob="0.04" />
+<entity name="animalRadiatedRabbit" prob="0.04" />
 <entity name="animalWaterRaion" prob="0.03"/>
 <entity name="animalFly" prob="0.2" />
 <entity name="animalFlyRadiated" prob="0.1" />
@@ -32,7 +32,7 @@
 <append xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
 <entity name="animalChickenDemon" prob="0.07" />
 <entity name="animalCloaker" prob="0.05" />
-<entity name="animalRadiatedCreature" prob="0.04" />
+<entity name="animalRadiatedRabbit" prob="0.04" />
 <entity name="animalWaterRaion" prob="0.02"/>
 <entity name="animalFly" prob="0.11" />
 <entity name="animalFlyRadiated" prob="0.06"/>
@@ -78,7 +78,7 @@
 <entity name="animalCloaker" prob="0.1" />
 <entity name="animalDiamondPhoenix" prob="0.05" />
 <entity name="animalBurningPhoenix" prob="0.05"/>
-<entity name="animalRadiatedCreature" prob="0.05" />
+<entity name="animalRadiatedRabbit" prob="0.05" />
 <entity name="animalWaterRaion" prob="0.07"/>
 <entity name="zombieAnesthesia" prob="0.09"/>	
 <entity name="zombieAquaZed" prob="0.06"/>
@@ -110,7 +110,7 @@
 <entity name="animalCloaker" prob="0.1" />
 <entity name="animalChickenDemon" prob="0.06" />
 <entity name="animalDiamondPhoenix" prob="0.05" />
-<entity name="animalRadiatedCreature" prob="0.03" />
+<entity name="animalRadiatedRabbit" prob="0.03" />
 <entity name="animalWaterRaion" prob="0.05"/>
 <entity name="animalFly" prob="0.1" />
 <entity name="animalFlyRadiated" prob="0.04"/>
@@ -137,7 +137,7 @@
 <entity name="animalCloaker" prob="0.1" />
 <entity name="animalBurningPhoenix" prob="0.08"/>
 <entity name="animalDiamondPhoenix" prob="0.08" />
-<entity name="animalRadiatedCreature" prob="0.08" />
+<entity name="animalRadiatedRabbit" prob="0.08" />
 <entity name="animalWaterRaion" prob="0.08"/>
 <entity name="animalFly" prob="0.17" />
 <entity name="animalFlyRadiated" prob="0.09"/>
@@ -169,17 +169,19 @@
 <entity name="animalChickenDemon" prob="0.12" />
 <entity name="animalBurningPhoenix" prob="0.05"/>
 <entity name="animalDiamondPhoenix" prob="0.05" />
-<entity name="animalRadiatedCreature" prob="0.03" />
+<entity name="animalRadiatedRabbit" prob="0.03" />
+<entity name="animalFireSnake" prob="0.09"/>	
 <entity name="animalFly" prob="0.13" />
 <entity name="animalFlyRadiated" prob="0.06"/>
 <entity name="animalWaterRaion" prob="0.06"/>
 </append>
 <append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']">
 <entity name="animalAnaconda" prob="0.05"/>	
+<entity name="animalFireSnake" prob="0.04"/>
 <entity name="animalChickenDemon" prob="0.07" />
 <entity name="animalCloaker" prob="0.08" />
 <entity name="animalDiamondPhoenix" prob="0.05" />
-<entity name="animalRadiatedCreature" prob="0.04" />
+<entity name="animalRadiatedRabbit" prob="0.04" />
 <entity name="animalWaterRaion" prob="0.04"/>
 <entity name="animalFlyRadiated" prob="0.07"/>
 <entity name="animalBurningPhoenix" prob="0.05"/>
@@ -190,31 +192,32 @@
 <entity name="animalChickenDemon" prob="0.05" />
 <entity name="animalCloaker" prob="0.08" />
 <entity name="animalDiamondPhoenix" prob="0.05" />
-<entity name="animalRadiatedCreature" prob="0.02" />
+<entity name="animalRadiatedRabbit" prob="0.02" />
 <entity name="animalWaterRaion" prob="0.03"/>
 </append>
 <append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']">
 <entity name="animalAnaconda" prob="0.03"/>	
+<entity name="animalFireSnake" prob="0.05"/>
 <entity name="animalBurningPhoenix" prob="0.06"/>
 <entity name="animalCloaker" prob="0.08" />
 <entity name="animalChickenDemon" prob="0.1" />
 <entity name="animalDiamondPhoenix" prob="0.06" />
-<entity name="animalRadiatedCreature" prob="0.05" />
+<entity name="animalRadiatedRabbit" prob="0.05" />
 <entity name="animalWaterRaion" prob="0.05"/>
 <entity name="animalFly" prob="0.1" />
 <entity name="animalFlyRadiated" prob="0.07"/>
 </append>
 <append xpath="/entitygroups/entitygroup[@name='AnimalsFarm']">
 <entity name="animalChickenDemon" prob="0.3" />
-<entity name="animalRadiatedCreature" prob="0.03" />
+<entity name="animalRadiatedRabbit" prob="0.03" />
 </append>
 <append xpath="/entitygroups/entitygroup[@name='AnimalsAll']">
-<entity name="animalAnaconda" prob="0.06"/>	
+<entity name="animalFireSnake" prob="0.02"/>
 <entity name="animalBurningPhoenix" prob="0.05"/>
 <entity name="animalChickenDemon" prob="0.1" />
 <entity name="animalCloaker" prob="0.1" />
 <entity name="animalDiamondPhoenix" prob="0.05" />
-<entity name="animalRadiatedCreature" prob="0.05" />
+<entity name="animalRadiatedRabbit" prob="0.05" />
 <entity name="animalWaterRaion" prob="0.05"/>
 </append>
 <append xpath="/entitygroups/entitygroup[@name='ZombieDogGroup']">
@@ -226,7 +229,8 @@
 <entity name="animalChickenDemon" prob="0.1" />
 <entity name="animalCloaker" prob="0.08" />
 <entity name="animalDiamondPhoenix" prob="0.04" />
-<entity name="animalRadiatedCreature" prob="0.05" />
+<entity name="animalFireSnake" prob="0.04"/>
+<entity name="animalRadiatedRabbit" prob="0.05" />
 <entity name="animalWaterRaion" prob="0.06"/>
 <entity name="animalFly" prob="0.15" />	
 <entity name="animalFlyRadiated" prob="0.07"/>
@@ -236,19 +240,19 @@
 </append>
 <append xpath="/entitygroups/entitygroup[@name='SnakeGroup']">
 <entity name="animalAnaconda" prob="0.1"/>
-<entity name="animalRadiatedCreature" prob="0.05" />	
+<entity name="animalFireSnake" prob="0.08"/>
+<entity name="animalRadiatedRabbit" prob="0.05" />	
 </append>
 <append xpath="/entitygroups/entitygroup[@name='VultureGroup']">
 <entity name="animalBurningPhoenix" prob="0.04"/>
 <entity name="animalCloaker" prob="0.12" />
-<entity name="animalDiamondPhoenix" prob="0.04"/>
-<entity name="animalRadiatedCreature" prob="0.05" />	
+<entity name="animalDiamondPhoenix" prob="0.04"/>	
 <entity name="animalFly" prob="0.4"/>
 <entity name="animalFlyRadiated" prob="0.15"/>
 </append>
 <append xpath="/entitygroups/entitygroup[@name='ZombieFarmGroup']">
 <entity name="animalChickenDemon" prob="0.3" />
-<entity name="animalRadiatedCreature" prob="0.05" />
+<entity name="animalRadiatedRabbit" prob="0.05" />
 <entity name="zombieBurningMan" prob="0.09"/>
 <entity name="zombieMoePuker" prob="0.1"/>
 </append>
@@ -342,7 +346,7 @@
 <entity name="zombieBlazingMan" prob="0.04"/>
 <entity name="animalBurningPhoenix" prob="0.022"/>
 <entity name="animalDiamondPhoenix" prob="0.020" />
-<entity name="animalRadiatedCreature" prob="0.05" />
+<entity name="animalRadiatedRabbit" prob="0.05" />
 </append>
 <append xpath="/entitygroups/entitygroup[@name='ZombieBurntGroup']">
 <entity name="animalBurningPhoenix" prob="0.03"/>
@@ -392,7 +396,7 @@
 <!-- Wandering Horde -->
 <append xpath="/entitygroups/entitygroup[contains(@name, 'wanderingHorde')]">
 <entity name="animalCloaker" prob="0.1" />
-<entity name="animalRadiatedCreature" prob="0.06" />
+<entity name="animalRadiatedRabbit" prob="0.06" />
 <entity name="animalWaterRaion" prob="0.05"/>
 <entity name="animalFly" prob="0.18"/>
 <entity name="zombieBurningMan" prob="0.18"/>
@@ -1153,13 +1157,13 @@
 <!-- feralHordeStage bloodmoon -->                                                                                                                                                                        
 <append xpath="/entitygroups/entitygroup[ starts-with(@name, 'feralHordeStageGS')]">
 <entity name="animalCloaker" prob="0.2" />
-<entity name="animalFly" prob="0.25"/>
+<entity name="animalFly" prob="0.18"/>
 <entity name="zombieBurningMan" prob="0.2"/>
-<entity name="zombieCandyGirl" prob="0.11"/>
+<entity name="zombieCandyGirl" prob="0.1"/>
 <entity name="zombieMoePuker" prob="0.15"/>
 <entity name="zombieMummy" prob="0.16"/>
 <entity name="zombieSpectre" prob="0.2"/>
-<entity name="zombieSpectreGirl" prob="0.15"/>
+<entity name="zombieSpectreGirl" prob="0.14"/>
 <entity name="zombieWhiteNoise" prob="0.12"/>
 </append>
 <append xpath="/entitygroups/entitygroup[@name='feralHordeStageGS49']">  <entity name="animalBurningPhoenix" prob="0.005"/><entity name="animalDiamondPhoenix" prob="0.005"/><entity name="zombieAquaZed" prob="0.005"/><entity name="zombieFreezer" prob="0.005"/><entity name="zombieIronMan" prob="0.005"/><entity name="zombieChroma" prob="0.005"/><entity name="animalFlyRadiated" prob="0.005"/> </append>
