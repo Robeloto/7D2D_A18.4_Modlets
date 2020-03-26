@@ -25,7 +25,7 @@
 	<ingredient name="drinkJarYuccaJuice" count="1"/>
 </recipe>
 
-<recipe name="armorSteelBootsOfHaste" count="1" craft_time="9999" craft_area="workbench">
+<recipe name="armorSteelBootsOfHaste" count="1" craft_time="9999" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="armorSteelSetParts" count="30"/>
 	<ingredient name="resourceForgedSteel" count="2"/>
 	<ingredient name="resourceFeather" count="10000"/>	
@@ -34,7 +34,7 @@
 	<ingredient name="resourceSewingKit" count="35"/>
 </recipe>
 
-<recipe name="armorMagicPlateArmor" count="1" craft_time="9999" craft_area="workbench">
+<recipe name="armorMagicPlateArmor" count="1" craft_time="9999" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="armorSteelSetParts" count="60"/>
 	<ingredient name="resourceForgedSteel" count="1000"/>
 	<ingredient name="resourceLeather" count="60"/>

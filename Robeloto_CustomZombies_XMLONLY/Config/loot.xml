@@ -1,10 +1,5 @@
 <configs>
 
-<append xpath="/lootcontainers/lootgroup[@name='commonBooks']">
-<item name="KillTheMummy" count="1"/>
-<item name="KillSomeGhosts" count="1"/>
- </append>
-
 <append xpath="/lootcontainers/lootgroup">
 
 <lootgroup name="groupQuestChallenge">
@@ -13,6 +8,7 @@
 </lootgroup>
 
 <lootgroup name="schematicsModsRare">
+<item name="gunToolSuperNailgunSchematic"/>
 <item name="drugAntibioticsAmoxilSchematic"/>
 </lootgroup>
 
@@ -30,7 +26,7 @@
 </lootgroup>
 
 <lootgroup name="groupQuestMedical">
-	<item name="drugAntibioticsAmoxil" count="1,2" prob="0.2"/>
+	<item name="drugAntibioticsAmoxil" count="1,2" prob="0.1"/>
 </lootgroup>
 </append>
 
